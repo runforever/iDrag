@@ -8,19 +8,22 @@
 
 import Cocoa
 
-struct UploadImageRowStruct {
+struct UploadFileRow{
     var imageUrl: String
+    var filename: String
     var image: NSImage
 
-    init(image: NSImage, url: String) {
+    init(image: NSImage, url: String, filename: String) {
         self.image = image
         self.imageUrl = url
+        self.filename = filename
     }
 }
 
 class UploadImageCell: NSTableCellView {
 
     @IBOutlet var uploadImage: NSImageView!
+    @IBOutlet var filenameLable: NSTextField!
     var imageUrl: String!
 
     @IBAction func copyUrlAction(_ sender: NSButton) {

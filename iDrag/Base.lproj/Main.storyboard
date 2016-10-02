@@ -664,20 +664,26 @@
                 </customObject>
                 <menu id="qUo-P8-NRN">
                     <items>
-                        <menuItem title="Image" id="kYv-H9-uWE">
+                        <menuItem title="未设置" id="bf1-Gg-CFc">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="未上传文件" tag="1" id="kYv-H9-uWE">
                             <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="YVu-eQ-l3e"/>
-                        <menuItem title="压缩图片" id="eoX-Rb-ssc">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                        </menuItem>
-                        <menuItem title="设置" id="fSN-I8-u9V">
+                        <menuItem title="压缩图片" tag="2" id="eoX-Rb-ssc">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <segue destination="gaB-qG-d5Z" kind="show" id="Lv5-67-mgR"/>
+                                <action selector="setImageCompress:" target="hOU-ib-Zzz" id="Ux9-LL-plq"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="退出" id="ryj-NV-xrI">
+                        <menuItem title="设置" tag="3" id="fSN-I8-u9V">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <segue destination="YLi-3I-pY2" kind="show" id="PfY-m1-ha4"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="退出" tag="4" id="ryj-NV-xrI">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="quitApp:" target="hOU-ib-Zzz" id="oza-Mq-HAN"/>
@@ -690,27 +696,27 @@
                     <rect key="frame" x="0.0" y="0.0" width="173" height="240"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
-                        <scrollView wantsLayer="YES" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="56" horizontalPageScroll="10" verticalLineScroll="56" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoQ-1M-dib">
+                        <scrollView wantsLayer="YES" fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="89" horizontalPageScroll="10" verticalLineScroll="89" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoQ-1M-dib">
                             <rect key="frame" x="0.0" y="0.0" width="173" height="240"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <clipView key="contentView" ambiguous="YES" id="Rmz-Og-wv6">
-                                <rect key="frame" x="1" y="0.0" width="171" height="239"/>
+                            <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="Rmz-Og-wv6">
+                                <rect key="frame" x="0.0" y="0.0" width="173" height="240"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="54" headerView="lwC-ky-rIV" viewBased="YES" id="lVW-Aq-5Ts">
-                                        <rect key="frame" x="0.0" y="0.0" width="171" height="216"/>
+                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="87" viewBased="YES" id="lVW-Aq-5Ts">
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="240"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <size key="intercellSpacing" width="3" height="2"/>
-                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" red="0.97227032230640986" green="0.97920274172980748" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <color key="gridColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                         <tableColumns>
-                                            <tableColumn width="168" minWidth="40" maxWidth="1000" id="rcp-sY-jbC">
+                                            <tableColumn width="170" minWidth="40" maxWidth="1000" id="rcp-sY-jbC">
                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                     <font key="font" metaFont="smallSystem"/>
                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                 </tableHeaderCell>
-                                                <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="aZd-tk-iiL">
+                                                <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" enabled="NO" title="Text Cell" id="aZd-tk-iiL">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -718,11 +724,25 @@
                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 <prototypeCellViews>
                                                     <tableCellView identifier="uploadImageRowCell" id="bco-F1-B9A" customClass="UploadImageCell" customModule="iDrag" customModuleProvider="target">
-                                                        <rect key="frame" x="1" y="1" width="168" height="54"/>
+                                                        <rect key="frame" x="1" y="1" width="170" height="87"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
+                                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pCd-jk-Wb3">
+                                                                <rect key="frame" x="3" y="29" width="74" height="55"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="spz-Mz-cGp"/>
+                                                            </imageView>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ozf-mi-VIX">
+                                                                <rect key="frame" x="17" y="3" width="150" height="24"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <textFieldCell key="cell" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="filename" id="OBX-Vz-hTX">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
                                                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2bK-sD-IcM">
-                                                                <rect key="frame" x="78" y="23" width="92" height="32"/>
+                                                                <rect key="frame" x="79" y="56" width="92" height="32"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <buttonCell key="cell" type="push" title="复制链接" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Rsv-WT-Mdq">
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -733,7 +753,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ZV-1g-VX0">
-                                                                <rect key="frame" x="78" y="-4" width="92" height="32"/>
+                                                                <rect key="frame" x="79" y="28" width="92" height="32"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <buttonCell key="cell" type="push" title="Markdown" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xVX-yh-o4n">
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -743,13 +763,9 @@
                                                                     <action selector="copyMarkdownAction:" target="bco-F1-B9A" id="6fp-4t-tQK"/>
                                                                 </connections>
                                                             </button>
-                                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pCd-jk-Wb3">
-                                                                <rect key="frame" x="3" y="3" width="73" height="48"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="spz-Mz-cGp"/>
-                                                            </imageView>
                                                         </subviews>
                                                         <connections>
+                                                            <outlet property="filenameLable" destination="Ozf-mi-VIX" id="NPT-MY-yAi"/>
                                                             <outlet property="uploadImage" destination="pCd-jk-Wb3" id="QYH-7g-YCn"/>
                                                         </connections>
                                                     </tableCellView>
@@ -762,19 +778,16 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="deviceWhite"/>
                             </clipView>
                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="vWM-OQ-gUs">
-                                <rect key="frame" x="1" y="118.88110965490341" width="237.73762130737305" height="15"/>
+                                <rect key="frame" x="-100" y="-100" width="0.0" height="15"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </scroller>
                             <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="u8j-oC-Vby">
-                                <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                <rect key="frame" x="-100" y="-100" width="15" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </scroller>
-                            <tableHeaderView key="headerView" hidden="YES" id="lwC-ky-rIV">
-                                <rect key="frame" x="0.0" y="0.0" width="171" height="23"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </tableHeaderView>
                         </scrollView>
                     </subviews>
                     <connections>
@@ -990,7 +1003,25 @@
                 </viewController>
                 <customObject id="dBu-2j-m0X" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="230"/>
+            <point key="canvasLocation" x="646" y="297"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="RZ2-qB-YKD">
+            <objects>
+                <windowController showSeguePresentationStyle="single" id="YLi-3I-pY2" sceneMemberID="viewController">
+                    <window key="window" title="设置" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="eol-b4-HVj">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                    </window>
+                    <connections>
+                        <segue destination="gaB-qG-d5Z" kind="relationship" relationship="window.shadowedContentViewController" id="ak8-W0-yqn"/>
+                    </connections>
+                </windowController>
+                <customObject id="B9J-EH-I7U" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112" y="303"/>
         </scene>
     </scenes>
 </document>

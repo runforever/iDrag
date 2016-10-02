@@ -14,7 +14,7 @@ class UploadImageView: NSView, NSTableViewDelegate, NSTableViewDataSource {
 
     @IBOutlet var uploadImageTable: NSTableView!
 
-    var uploadImageRows: [UploadImageRowStruct] = []
+    var uploadImageRows: Array<UploadFileRow> = []
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -31,6 +31,7 @@ class UploadImageView: NSView, NSTableViewDelegate, NSTableViewDataSource {
             let uploadImageRow = uploadImageRows[row]
             cell.imageUrl = uploadImageRow.imageUrl
             cell.uploadImage.image = uploadImageRow.image
+            cell.filenameLable.stringValue = uploadImageRow.filename
             return cell
         }
         return nil

@@ -9,7 +9,7 @@ target 'iDrag' do
   pod "Qiniu", "~> 7.1"
   pod "CryptoSwift", :git => "https://github.com/krzyzanowskim/CryptoSwift", :branch => "master"
   pod "SwiftyJSON"
-
+  pod "PromiseKit", "~> 4.0"
 end
 
 post_install do |installer|
