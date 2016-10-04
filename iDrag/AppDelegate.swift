@@ -9,7 +9,7 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate, NSSeguePerforming {
+class AppDelegate: NSObject, NSApplicationDelegate, NSSeguePerforming, NSUserNotificationCenterDelegate {
 
     @IBOutlet weak var dragMenu: NSMenu!
 
@@ -24,9 +24,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSSeguePerforming {
     func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSettingSegue" {
             let settingWindowController = segue.destinationController as! NSWindowController
+            settingWindowController.window?.level = Int(CGWindowLevelKey.floatingWindow.hashValue)
+
             let settingViewController = settingWindowController.contentViewController as! SettingViewController
             settingViewController.dragMenu = dragMenu
         }
+    }
+
+    func userNotificationCenter(_ center: NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
+        return true
     }
 }
 

@@ -50,9 +50,15 @@ class DragUploadManager {
             let imageItem = self.dragApp.menu?.item(withTag: 1)!
             imageItem?.view = self.uploadImageView
             imageItem?.isHidden = true
-            }.always {
-                self.dragApp.button?.title = "iDrag"
-                self.dragApp.button?.performClick(nil)
+            self.dragApp.button?.title = "iDrag"
+            self.dragApp.button?.performClick(nil)
+        }.catch(execute: {error in
+            let failNotification = NSUserNotification()
+            failNotification.title = "上传失败"
+            failNotification.informativeText = "请检查设置是否正确"
+            NSUserNotificationCenter.default.deliver(failNotification)
+        }).always {
+            self.dragApp.button?.title = "iDrag"
         }
     }
 

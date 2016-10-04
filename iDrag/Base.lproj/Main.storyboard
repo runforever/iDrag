@@ -806,14 +806,14 @@
             <objects>
                 <viewController title="设置" showSeguePresentationStyle="single" id="gaB-qG-d5Z" customClass="SettingViewController" customModule="iDrag" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Wec-LH-K1R">
-                        <rect key="frame" x="0.0" y="0.0" width="391" height="199"/>
+                        <rect key="frame" x="0.0" y="0.0" width="474" height="210"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fillEqually" orientation="vertical" alignment="trailing" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cJ2-C6-dOp">
-                                <rect key="frame" x="46" y="62" width="314" height="112"/>
+                                <rect key="frame" x="32" y="73" width="410" height="112"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A4C-41-bOs">
-                                        <rect key="frame" x="0.0" y="90" width="314" height="22"/>
+                                        <rect key="frame" x="2" y="90" width="408" height="22"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q5f-L8-JXT">
                                                 <rect key="frame" x="-2" y="3" width="74" height="17"/>
@@ -824,11 +824,11 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v5Q-Ac-2hZ">
-                                                <rect key="frame" x="78" y="0.0" width="236" height="22"/>
+                                                <rect key="frame" x="78" y="0.0" width="330" height="22"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="236" id="PrV-ih-Acc"/>
+                                                    <constraint firstAttribute="width" constant="330" id="PrV-ih-Acc"/>
                                                 </constraints>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="7X5-XX-uPk">
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="必填 Access Key" drawsBackground="YES" id="7X5-XX-uPk">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -845,7 +845,7 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l9t-ta-Kxz">
-                                        <rect key="frame" x="4" y="60" width="310" height="22"/>
+                                        <rect key="frame" x="6" y="60" width="404" height="22"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3Lh-BR-EaO">
                                                 <rect key="frame" x="-2" y="3" width="70" height="17"/>
@@ -856,11 +856,11 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cdb-Ku-clf">
-                                                <rect key="frame" x="74" y="0.0" width="236" height="22"/>
+                                                <rect key="frame" x="74" y="0.0" width="330" height="22"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="236" id="ylV-EK-ryn"/>
+                                                    <constraint firstAttribute="width" constant="330" id="ylV-EK-ryn"/>
                                                 </constraints>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="09g-D5-0Y9">
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="必填 Secret Key" drawsBackground="YES" id="09g-D5-0Y9">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -877,7 +877,7 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Za-bN-rwa">
-                                        <rect key="frame" x="18" y="30" width="296" height="22"/>
+                                        <rect key="frame" x="20" y="30" width="390" height="22"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jC6-2J-bV6">
                                                 <rect key="frame" x="-2" y="3" width="56" height="17"/>
@@ -888,11 +888,11 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Cv-wQ-lgt">
-                                                <rect key="frame" x="60" y="0.0" width="236" height="22"/>
+                                                <rect key="frame" x="60" y="0.0" width="330" height="22"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="236" id="3Ic-oW-wLN"/>
+                                                    <constraint firstAttribute="width" constant="330" id="3Ic-oW-wLN"/>
                                                 </constraints>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="r4e-ii-9WQ">
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="必填 空间名称" drawsBackground="YES" id="r4e-ii-9WQ">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -909,7 +909,7 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Sn-A2-XKz">
-                                        <rect key="frame" x="44" y="0.0" width="270" height="22"/>
+                                        <rect key="frame" x="46" y="0.0" width="364" height="22"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OVA-Q7-569">
                                                 <rect key="frame" x="-2" y="3" width="30" height="17"/>
@@ -920,11 +920,11 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6JI-ts-2gr">
-                                                <rect key="frame" x="34" y="0.0" width="236" height="22"/>
+                                                <rect key="frame" x="34" y="0.0" width="330" height="22"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="236" id="Sfo-uY-CLX"/>
+                                                    <constraint firstAttribute="width" constant="330" id="Sfo-uY-CLX"/>
                                                 </constraints>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="aAL-Ey-erL">
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="必填 空间域名" drawsBackground="YES" id="aAL-Ey-erL">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -942,7 +942,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="314" id="VeH-ho-gSZ"/>
+                                    <constraint firstAttribute="width" constant="410" id="VeH-ho-gSZ"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
@@ -958,7 +958,7 @@
                                 </customSpacing>
                             </stackView>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h0n-Tv-WYl">
-                                <rect key="frame" x="244" y="20" width="116" height="21"/>
+                                <rect key="frame" x="327" y="31" width="116" height="21"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hRs-PW-LX9">
                                         <rect key="frame" x="-6" y="-7" width="66" height="32"/>
@@ -995,7 +995,8 @@
                             <constraint firstItem="cJ2-C6-dOp" firstAttribute="top" secondItem="Wec-LH-K1R" secondAttribute="top" constant="25" id="dap-e9-U0c"/>
                             <constraint firstItem="h0n-Tv-WYl" firstAttribute="top" secondItem="cJ2-C6-dOp" secondAttribute="bottom" constant="21" id="fBg-5s-Dw6"/>
                             <constraint firstAttribute="trailing" secondItem="h0n-Tv-WYl" secondAttribute="trailing" constant="31" id="flj-bp-peG"/>
-                            <constraint firstAttribute="trailing" secondItem="cJ2-C6-dOp" secondAttribute="trailing" constant="31" id="q5l-nS-CBa"/>
+                            <constraint firstAttribute="trailing" secondItem="cJ2-C6-dOp" secondAttribute="trailing" constant="32" id="q5l-nS-CBa"/>
+                            <constraint firstItem="cJ2-C6-dOp" firstAttribute="leading" secondItem="Wec-LH-K1R" secondAttribute="leading" constant="32" id="tqD-hN-xgj"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1007,7 +1008,7 @@
                 </viewController>
                 <customObject id="dBu-2j-m0X" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="251" y="236"/>
+            <point key="canvasLocation" x="335.5" y="247"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="RZ2-qB-YKD">
