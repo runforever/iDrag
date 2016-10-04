@@ -655,7 +655,11 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="iDrag" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="iDrag" customModuleProvider="target">
+                    <connections>
+                        <outlet property="dragMenu" destination="qUo-P8-NRN" id="MER-Ku-XXL"/>
+                    </connections>
+                </customObject>
                 <customObject id="hOU-ib-Zzz" customClass="DragAppController" customModule="iDrag" customModuleProvider="target">
                     <connections>
                         <outlet property="dragMenu" destination="qUo-P8-NRN" id="DE2-gW-imq"/>

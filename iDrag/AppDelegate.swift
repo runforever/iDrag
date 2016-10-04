@@ -11,6 +11,8 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSSeguePerforming {
 
+    @IBOutlet weak var dragMenu: NSMenu!
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }
@@ -21,7 +23,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSSeguePerforming {
 
     func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSettingSegue" {
-            let dragMenu = segue.sourceController as! NSMenu
             let settingWindowController = segue.destinationController as! NSWindowController
             let settingViewController = settingWindowController.contentViewController as! SettingViewController
             settingViewController.dragMenu = dragMenu

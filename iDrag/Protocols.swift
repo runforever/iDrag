@@ -22,15 +22,11 @@ extension CheckSettings {
         })
 
         let statusMenuItem = dragMenu.item(at: 0)!
-        print(statusMenuItem)
-        print(dragMenu.items)
         if unSetItem.count == 0 {
-            //statusMenuItem?.isHidden = true
-            statusMenuItem.title = "设置完成"
+            statusMenuItem.isHidden = true
         }
         else {
-            //statusMenuItem?.isHidden = false
-            statusMenuItem.title = "未设置"
+            statusMenuItem.isHidden = false
         }
     }
 }
