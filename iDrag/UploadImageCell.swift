@@ -8,18 +8,6 @@
 
 import Cocoa
 
-struct UploadFileRow{
-    var imageUrl: String
-    var filename: String
-    var image: NSImage
-
-    init(image: NSImage, url: String, filename: String) {
-        self.image = image
-        self.imageUrl = url
-        self.filename = filename
-    }
-}
-
 class UploadImageCell: NSTableCellView {
 
     @IBOutlet var uploadImage: NSImageView!
@@ -30,7 +18,6 @@ class UploadImageCell: NSTableCellView {
         let pasteboard = NSPasteboard.general()
         pasteboard.declareTypes([NSPasteboardTypeString], owner: nil)
         pasteboard.setString(imageUrl, forType: NSPasteboardTypeString)
-        Swift.print(imageUrl)
     }
 
     @IBAction func copyMarkdownAction(_ sender: NSButton) {
@@ -38,6 +25,5 @@ class UploadImageCell: NSTableCellView {
         let pasteboard = NSPasteboard.general()
         pasteboard.declareTypes([NSPasteboardTypeString], owner: nil)
         pasteboard.setString(markdownUrl, forType: NSPasteboardTypeString)
-        Swift.print(markdownUrl)
     }
 }

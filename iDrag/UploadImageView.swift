@@ -18,8 +18,6 @@ class UploadImageView: NSView, NSTableViewDelegate, NSTableViewDataSource {
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-
-        // Drawing code here.
     }
 
     func numberOfRows(in tableView: NSTableView) -> Int {

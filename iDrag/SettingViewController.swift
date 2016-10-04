@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class SettingViewController: NSViewController {
+class SettingViewController: NSViewController, CheckSettings {
 
     @IBOutlet var accessKeyInput: NSTextField!
     @IBOutlet var secretKeyInput: NSTextField!
@@ -17,6 +17,7 @@ class SettingViewController: NSViewController {
 
     var userDefaults: UserDefaults!
     var settingMeta: [String: NSTextField]!
+    var dragMenu: NSMenu!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,7 @@ class SettingViewController: NSViewController {
         }
 
         userDefaults.synchronize()
+        checkSettings(userDefaults: userDefaults, dragMenu: dragMenu)
         self.view.window?.close()
     }
 

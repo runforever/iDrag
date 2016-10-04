@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		684822641DA2A2360031E3DB /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684822631DA2A2360031E3DB /* Models.swift */; };
+		684822661DA2A3B30031E3DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684822651DA2A3B30031E3DB /* Constants.swift */; };
+		684822691DA2AEC60031E3DB /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684822681DA2AEC60031E3DB /* Controllers.swift */; };
+		6848226C1DA2BB2C0031E3DB /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6848226B1DA2BB2C0031E3DB /* Protocols.swift */; };
 		687415F41D9D0BDA0070B48E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687415F31D9D0BDA0070B48E /* SettingViewController.swift */; };
 		687415F61D9D153E0070B48E /* UploadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687415F51D9D153E0070B48E /* UploadImageView.swift */; };
 		687415FA1D9E4C580070B48E /* UploadImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687415F91D9E4C580070B48E /* UploadImageCell.swift */; };
@@ -20,6 +24,10 @@
 /* Begin PBXFileReference section */
 		1582B13951388D24171EFEC9 /* Pods_iDrag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iDrag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42589833B244F0491E24CE91 /* Pods-iDrag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iDrag.release.xcconfig"; path = "Pods/Target Support Files/Pods-iDrag/Pods-iDrag.release.xcconfig"; sourceTree = "<group>"; };
+		684822631DA2A2360031E3DB /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		684822651DA2A3B30031E3DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		684822681DA2AEC60031E3DB /* Controllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
+		6848226B1DA2BB2C0031E3DB /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		687415F31D9D0BDA0070B48E /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		687415F51D9D153E0070B48E /* UploadImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImageView.swift; sourceTree = "<group>"; };
 		687415F91D9E4C580070B48E /* UploadImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImageCell.swift; sourceTree = "<group>"; };
@@ -53,6 +61,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6848226A1DA2BAAF0031E3DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				687415F51D9D153E0070B48E /* UploadImageView.swift */,
+				687415F91D9E4C580070B48E /* UploadImageCell.swift */,
+				687415F31D9D0BDA0070B48E /* SettingViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		68F5393C1D9CEE9F00A7DB69 = {
 			isa = PBXGroup;
 			children = (
@@ -74,11 +92,13 @@
 		68F539471D9CEE9F00A7DB69 /* iDrag */ = {
 			isa = PBXGroup;
 			children = (
+				6848226A1DA2BAAF0031E3DB /* View */,
 				68F539481D9CEE9F00A7DB69 /* AppDelegate.swift */,
 				68F539591D9CF6B600A7DB69 /* DragAppController.swift */,
-				687415F31D9D0BDA0070B48E /* SettingViewController.swift */,
-				687415F51D9D153E0070B48E /* UploadImageView.swift */,
-				687415F91D9E4C580070B48E /* UploadImageCell.swift */,
+				684822631DA2A2360031E3DB /* Models.swift */,
+				6848226B1DA2BB2C0031E3DB /* Protocols.swift */,
+				684822681DA2AEC60031E3DB /* Controllers.swift */,
+				684822651DA2A3B30031E3DB /* Constants.swift */,
 				68F5394C1D9CEE9F00A7DB69 /* Assets.xcassets */,
 				68F5394E1D9CEE9F00A7DB69 /* Main.storyboard */,
 				68F539511D9CEE9F00A7DB69 /* Info.plist */,
@@ -217,9 +237,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				684822661DA2A3B30031E3DB /* Constants.swift in Sources */,
 				687415F61D9D153E0070B48E /* UploadImageView.swift in Sources */,
 				68F539491D9CEE9F00A7DB69 /* AppDelegate.swift in Sources */,
+				6848226C1DA2BB2C0031E3DB /* Protocols.swift in Sources */,
+				684822691DA2AEC60031E3DB /* Controllers.swift in Sources */,
 				68F5395A1D9CF6B600A7DB69 /* DragAppController.swift in Sources */,
+				684822641DA2A2360031E3DB /* Models.swift in Sources */,
 				687415FA1D9E4C580070B48E /* UploadImageCell.swift in Sources */,
 				687415F41D9D0BDA0070B48E /* SettingViewController.swift in Sources */,
 			);

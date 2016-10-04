@@ -680,7 +680,7 @@
                         <menuItem title="设置" tag="3" id="fSN-I8-u9V">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <segue destination="YLi-3I-pY2" kind="show" id="PfY-m1-ha4"/>
+                                <segue destination="YLi-3I-pY2" kind="show" identifier="showSettingSegue" id="PfY-m1-ha4"/>
                             </connections>
                         </menuItem>
                         <menuItem title="退出" tag="4" id="ryj-NV-xrI">
@@ -795,7 +795,7 @@
                     </connections>
                 </customView>
             </objects>
-            <point key="canvasLocation" x="113" y="-53"/>
+            <point key="canvasLocation" x="112" y="-54"/>
         </scene>
         <!--设置-->
         <scene sceneID="cvg-Fm-bE8">
@@ -1003,11 +1003,12 @@
                 </viewController>
                 <customObject id="dBu-2j-m0X" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="646" y="297"/>
+            <point key="canvasLocation" x="251" y="236"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="RZ2-qB-YKD">
             <objects>
+                <customObject id="B9J-EH-I7U" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <windowController showSeguePresentationStyle="single" id="YLi-3I-pY2" sceneMemberID="viewController">
                     <window key="window" title="设置" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="eol-b4-HVj">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
@@ -1019,9 +1020,8 @@
                         <segue destination="gaB-qG-d5Z" kind="relationship" relationship="window.shadowedContentViewController" id="ak8-W0-yqn"/>
                     </connections>
                 </windowController>
-                <customObject id="B9J-EH-I7U" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="112" y="303"/>
+            <point key="canvasLocation" x="-262" y="299"/>
         </scene>
     </scenes>
 </document>
