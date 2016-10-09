@@ -38,7 +38,7 @@ class DragUploadManager {
             let filePath = path as! String
             uploadFiles.append(uploadFile(filePath: filePath))
         }
-        dragApp.title = "Up"
+
         when(fulfilled: uploadFiles).then { uploadRows -> Void in
             let maxDisplayCount = 9
             self.uploadImageView.uploadImageRows += uploadRows
@@ -50,7 +50,6 @@ class DragUploadManager {
             let imageItem = self.dragApp.menu?.item(withTag: 1)!
             imageItem?.view = self.uploadImageView
             imageItem?.isHidden = true
-            self.dragApp.button?.title = "iDrag"
             self.dragApp.button?.performClick(nil)
         }.catch(execute: {error in
             let failNotification = NSUserNotification()
@@ -58,7 +57,6 @@ class DragUploadManager {
             failNotification.informativeText = "请检查设置是否正确"
             NSUserNotificationCenter.default.deliver(failNotification)
         }).always {
-            self.dragApp.button?.title = "iDrag"
         }
     }
 

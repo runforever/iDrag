@@ -31,7 +31,7 @@ class DragAppController: NSObject, NSWindowDelegate, NSDraggingDestination, Chec
         setCompressMenuState()
         checkSettings(userDefaults: userDefaults, dragMenu: dragMenu)
 
-        dragApp.button?.title = "iDrag"
+        dragApp.button?.image = NSImage(named: "MenuIcon")
         dragApp.button?.window?.registerForDraggedTypes([NSFilenamesPboardType])
         dragApp.button?.window?.delegate = self
 
