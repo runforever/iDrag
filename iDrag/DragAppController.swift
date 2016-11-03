@@ -44,7 +44,7 @@ class DragAppController: NSObject, NSWindowDelegate, NSDraggingDestination, Chec
 
     func setCompressMenuState() {
         let compressState = userDefaults.integer(forKey: CompressSettingKey)
-        let compressMenuItem = dragMenu.item(withTitle: "压缩图片")
+        let compressMenuItem = dragMenu.item(withTag: 2)
         if [NSOnState, NSOnState].contains(compressState) {
             compressMenuItem?.state = compressState
         }
@@ -81,8 +81,10 @@ class DragAppController: NSObject, NSWindowDelegate, NSDraggingDestination, Chec
     @IBAction func quitApp(_ sender: NSMenuItem) {
         NSApplication.shared().terminate(self)
     }
-    
-    @IBAction func showSettings(_ sender: NSMenuItem) {
-        // let settingViewController = SettingViewController()
+    @IBAction func uploadClipboardAction(_ sender: NSMenuItem) {
+        print("upload")
+        let pasteboard = NSPasteboard.general()
+        let imageData = pasteboard.data(forType: NSPasteboardTypePNG)!
+        dragUploadManager.uploadData(imageData: imageData)
     }
 }

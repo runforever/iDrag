@@ -41,18 +41,7 @@ class DragUploadManager {
 
         self.dragApp.button?.image = NSImage(named: "Uploading")
         when(fulfilled: uploadFiles).then { uploadRows -> Void in
-            let maxDisplayCount = 9
-            self.uploadImageView.uploadImageRows += uploadRows
-            self.uploadImageView.uploadImageRows = self.uploadImageView.uploadImageRows.reversed()
-            if self.uploadImageView.uploadImageRows.count > maxDisplayCount {
-                self.uploadImageView.uploadImageRows = Array(self.uploadImageView.uploadImageRows[0..<maxDisplayCount])
-            }
-            self.uploadImageView.uploadImageTable.reloadData()
-            let imageItem = self.dragApp.menu?.item(withTag: 1)!
-            imageItem?.view = self.uploadImageView
-            imageItem?.isHidden = true
-            self.dragApp.button?.image = NSImage(named: "MenuIcon")
-            self.dragApp.button?.performClick(nil)
+            self.renderUploadImageView(uploadRows: uploadRows)
 
         }.catch(execute: {error in
             let failNotification = NSUserNotification()
@@ -103,6 +92,38 @@ class DragUploadManager {
         }
     }
 
+    func uploadData(imageData: Data) {
+        self.dragApp.button?.image = NSImage(named: "Uploading")
+        let filename = "\(NSUUID().uuidString).png"
+        let token = createQiniuToken(filename: filename)
+        qiNiu.put(imageData, key: filename, token: token, complete: {info, key, resp -> Void in
+            switch info?.statusCode {
+            case Int32(200)?:
+                let uploadFileRow = self.createUploadDataRow(filename: filename, imageData: imageData)
+                let uploadFileRows: [UploadFileRow] = [uploadFileRow]
+                self.renderUploadImageView(uploadRows: uploadFileRows)
+
+            default:
+                print("error")
+            }
+        }, option: nil)
+    }
+
+    func renderUploadImageView(uploadRows: [UploadFileRow]) {
+        let maxDisplayCount = 9
+        self.uploadImageView.uploadImageRows += uploadRows
+        self.uploadImageView.uploadImageRows = self.uploadImageView.uploadImageRows.reversed()
+        if self.uploadImageView.uploadImageRows.count > maxDisplayCount {
+            self.uploadImageView.uploadImageRows = Array(self.uploadImageView.uploadImageRows[0..<maxDisplayCount])
+        }
+        self.uploadImageView.uploadImageTable.reloadData()
+        let imageItem = self.dragApp.menu?.item(withTag: 1)!
+        imageItem?.view = self.uploadImageView
+        imageItem?.isHidden = true
+        self.dragApp.button?.image = NSImage(named: "MenuIcon")
+        self.dragApp.button?.performClick(nil)
+    }
+
     func createCompressImageData(filePath: String) -> Data {
         let image = NSImage(contentsOfFile: filePath)!
         let bitmapImageRep = NSBitmapImageRep(data: image.tiffRepresentation!)
@@ -141,6 +162,13 @@ class DragUploadManager {
             }
         }()
 
+        let uploadFileRow = UploadFileRow(image: fileIcon, url: imageUrl, filename: filename)
+        return uploadFileRow
+    }
+
+    func createUploadDataRow(filename: String, imageData: Data) -> UploadFileRow {
+        let imageUrl = "\(self.domain)/\(filename)"
+        let fileIcon = NSImage(data: imageData)!
         let uploadFileRow = UploadFileRow(image: fileIcon, url: imageUrl, filename: filename)
         return uploadFileRow
     }

@@ -7,7 +7,7 @@ target 'iDrag' do
 
   # Pods for iDrag
   pod "Qiniu", "~> 7.1"
-  pod "CryptoSwift", :git => "https://github.com/krzyzanowskim/CryptoSwift", :branch => "master"
+  pod "CryptoSwift"
   pod "SwiftyJSON"
   pod "PromiseKit", "~> 4.0"
 end

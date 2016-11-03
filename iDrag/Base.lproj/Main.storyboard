@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
@@ -675,20 +676,23 @@
                             <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="YVu-eQ-l3e"/>
+                        <menuItem title="剪贴板上传" tag="5" enabled="NO" keyEquivalent="u" id="g4E-LV-QPl">
+                            <connections>
+                                <action selector="uploadClipboardAction:" target="hOU-ib-Zzz" id="xjv-S6-8p9"/>
+                            </connections>
+                        </menuItem>
                         <menuItem title="压缩图片" tag="2" id="eoX-Rb-ssc">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="setImageCompress:" target="hOU-ib-Zzz" id="Ux9-LL-plq"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="设置" tag="3" id="fSN-I8-u9V">
-                            <modifierMask key="keyEquivalentModifierMask"/>
+                        <menuItem title="设置" tag="3" keyEquivalent="," id="fSN-I8-u9V">
                             <connections>
                                 <segue destination="YLi-3I-pY2" kind="show" identifier="showSettingSegue" id="PfY-m1-ha4"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="退出" tag="4" id="ryj-NV-xrI">
-                            <modifierMask key="keyEquivalentModifierMask"/>
+                        <menuItem title="退出" tag="4" keyEquivalent="q" id="ryj-NV-xrI">
                             <connections>
                                 <action selector="quitApp:" target="hOU-ib-Zzz" id="oza-Mq-HAN"/>
                             </connections>
@@ -877,10 +881,10 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Za-bN-rwa">
-                                        <rect key="frame" x="20" y="30" width="390" height="22"/>
+                                        <rect key="frame" x="18" y="30" width="392" height="22"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jC6-2J-bV6">
-                                                <rect key="frame" x="-2" y="3" width="56" height="17"/>
+                                                <rect key="frame" x="-2" y="3" width="58" height="17"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="空间名称" id="mG5-j1-bGH">
                                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -888,7 +892,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Cv-wQ-lgt">
-                                                <rect key="frame" x="60" y="0.0" width="330" height="22"/>
+                                                <rect key="frame" x="62" y="0.0" width="330" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="330" id="3Ic-oW-wLN"/>
                                                 </constraints>
@@ -909,10 +913,10 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Sn-A2-XKz">
-                                        <rect key="frame" x="46" y="0.0" width="364" height="22"/>
+                                        <rect key="frame" x="45" y="0.0" width="365" height="22"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OVA-Q7-569">
-                                                <rect key="frame" x="-2" y="3" width="30" height="17"/>
+                                                <rect key="frame" x="-2" y="3" width="31" height="17"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="域名" id="Xb2-e5-MuK">
                                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -920,11 +924,11 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6JI-ts-2gr">
-                                                <rect key="frame" x="34" y="0.0" width="330" height="22"/>
+                                                <rect key="frame" x="35" y="0.0" width="330" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="330" id="Sfo-uY-CLX"/>
                                                 </constraints>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="必填 空间域名" drawsBackground="YES" id="aAL-Ey-erL">
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="必填 例如 http://qiniu.youdomain.com" drawsBackground="YES" id="aAL-Ey-erL">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -958,10 +962,10 @@
                                 </customSpacing>
                             </stackView>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h0n-Tv-WYl">
-                                <rect key="frame" x="327" y="31" width="116" height="21"/>
+                                <rect key="frame" x="325" y="31" width="118" height="21"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hRs-PW-LX9">
-                                        <rect key="frame" x="-6" y="-7" width="66" height="32"/>
+                                        <rect key="frame" x="-6" y="-7" width="67" height="32"/>
                                         <buttonCell key="cell" type="push" title="取消" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2wJ-jO-SiF">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -971,10 +975,10 @@
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QiS-ar-QTD">
-                                        <rect key="frame" x="56" y="-7" width="66" height="32"/>
-                                        <buttonCell key="cell" type="push" title="应用" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6EP-GK-bwL">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                        <rect key="frame" x="57" y="-7" width="67" height="32"/>
+                                        <buttonCell key="cell" type="push" title="应用" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" allowsMixedState="YES" inset="2" id="6EP-GK-bwL">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" size="13" name="HiraginoSansGB-W3"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="confirmAction:" target="gaB-qG-d5Z" id="sUf-dm-z1r"/>
@@ -1008,7 +1012,7 @@
                 </viewController>
                 <customObject id="dBu-2j-m0X" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="335.5" y="247"/>
+            <point key="canvasLocation" x="329" y="238"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="RZ2-qB-YKD">
@@ -1026,7 +1030,7 @@
                     </connections>
                 </windowController>
             </objects>
-            <point key="canvasLocation" x="-262" y="299"/>
+            <point key="canvasLocation" x="-242" y="296"/>
         </scene>
     </scenes>
 </document>

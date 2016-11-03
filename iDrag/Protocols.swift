@@ -22,11 +22,15 @@ extension CheckSettings {
         })
 
         let statusMenuItem = dragMenu.item(at: 0)!
+        let shortcutItem = dragMenu.item(at: 5)!
+        
         if unSetItem.count == 0 {
             statusMenuItem.isHidden = true
+            shortcutItem.isHidden = false
         }
         else {
             statusMenuItem.isHidden = false
+            shortcutItem.isHidden = true
         }
     }
 }

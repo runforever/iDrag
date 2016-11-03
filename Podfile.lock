@@ -12,48 +12,38 @@ PODS:
   - AFNetworking/Reachability (3.1.0)
   - AFNetworking/Security (3.1.0)
   - AFNetworking/Serialization (3.1.0)
-  - CryptoSwift (0.6.0)
+  - CryptoSwift (0.6.5)
   - HappyDNS (0.3.10)
-  - PromiseKit (4.0.3):
-    - PromiseKit/Foundation (= 4.0.3)
-    - PromiseKit/QuartzCore (= 4.0.3)
-    - PromiseKit/UIKit (= 4.0.3)
-  - PromiseKit/CorePromise (4.0.3)
-  - PromiseKit/Foundation (4.0.3):
+  - PromiseKit (4.0.4):
+    - PromiseKit/Foundation (= 4.0.4)
+    - PromiseKit/QuartzCore (= 4.0.4)
+    - PromiseKit/UIKit (= 4.0.4)
+  - PromiseKit/CorePromise (4.0.4)
+  - PromiseKit/Foundation (4.0.4):
     - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (4.0.3):
+  - PromiseKit/QuartzCore (4.0.4):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (4.0.3):
+  - PromiseKit/UIKit (4.0.4):
     - PromiseKit/CorePromise
-  - Qiniu (7.1.1):
+  - Qiniu (7.1.2):
     - AFNetworking (~> 3)
     - HappyDNS (~> 0.3)
-  - SwiftyJSON (3.1.0)
+  - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
-  - CryptoSwift (from `https://github.com/krzyzanowskim/CryptoSwift`, branch `master`)
+  - CryptoSwift
   - PromiseKit (~> 4.0)
   - Qiniu (~> 7.1)
   - SwiftyJSON
 
-EXTERNAL SOURCES:
-  CryptoSwift:
-    :branch: master
-    :git: https://github.com/krzyzanowskim/CryptoSwift
-
-CHECKOUT OPTIONS:
-  CryptoSwift:
-    :commit: 13764570021ca73c315c3de18f367e5fdb55d785
-    :git: https://github.com/krzyzanowskim/CryptoSwift
-
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  CryptoSwift: 4a599b7241b8d3b857d6e2c28867d0bd5d1aae24
+  CryptoSwift: d86b1d97d39b4a361ba44c77180b221e9c5b864f
   HappyDNS: 06a9fed2796663fd87626dbf02552933265bf059
-  PromiseKit: dfe8fcc6445674fb23378d89990838c1cbdbf05a
-  Qiniu: 5e5d7d759d22393bb4b87cdfacf8fab951260f3e
-  SwiftyJSON: 29b9f2a64f118c07e691667c2ba1efe536acfe0b
+  PromiseKit: 8e8ee39d33ff199d92a1a883b5396f6285be6c91
+  Qiniu: d57cb922b5c31f0d1cfe2c8fea3cf83997cdcf62
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 55ddb00b048f718028e7dadcb7a149447365ba85
+PODFILE CHECKSUM: 408ed633f4b5000c149810db8d7cc6645a9762b2
 
 COCOAPODS: 1.0.1
