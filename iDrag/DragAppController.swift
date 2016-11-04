@@ -82,7 +82,6 @@ class DragAppController: NSObject, NSWindowDelegate, NSDraggingDestination, Chec
         NSApplication.shared().terminate(self)
     }
     @IBAction func uploadClipboardAction(_ sender: NSMenuItem) {
-        print("upload")
         let pasteboard = NSPasteboard.general()
         let imageData = pasteboard.data(forType: NSPasteboardTypePNG)!
         dragUploadManager.uploadData(imageData: imageData)

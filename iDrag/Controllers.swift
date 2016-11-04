@@ -42,16 +42,11 @@ class DragUploadManager {
         self.dragApp.button?.image = NSImage(named: "Uploading")
         when(fulfilled: uploadFiles).then { uploadRows -> Void in
             self.renderUploadImageView(uploadRows: uploadRows)
-
-        }.catch(execute: {error in
-            let failNotification = NSUserNotification()
-            failNotification.title = "上传失败"
-            failNotification.informativeText = "请检查设置是否正确"
-            NSUserNotificationCenter.default.deliver(failNotification)
-            
-        }).always {
+        }.always {
             self.dragApp.button?.image = NSImage(named: "MenuIcon")
-        }
+        }.catch(execute: {error in
+            self.showFailNotify()
+        })
     }
 
     func uploadFile(filePath: String) -> Promise<UploadFileRow> {
@@ -96,15 +91,18 @@ class DragUploadManager {
         self.dragApp.button?.image = NSImage(named: "Uploading")
         let filename = "\(NSUUID().uuidString).png"
         let token = createQiniuToken(filename: filename)
+
+        self.dragApp.button?.image = NSImage(named: "Uploading")
         qiNiu.put(imageData, key: filename, token: token, complete: {info, key, resp -> Void in
             switch info?.statusCode {
             case Int32(200)?:
                 let uploadFileRow = self.createUploadDataRow(filename: filename, imageData: imageData)
                 let uploadFileRows: [UploadFileRow] = [uploadFileRow]
                 self.renderUploadImageView(uploadRows: uploadFileRows)
-
             default:
-                print("error")
+                self.showFailNotify()
+                
+            self.dragApp.button?.image = NSImage(named: "MenuIcon")
             }
         }, option: nil)
     }
@@ -122,6 +120,13 @@ class DragUploadManager {
         imageItem?.isHidden = true
         self.dragApp.button?.image = NSImage(named: "MenuIcon")
         self.dragApp.button?.performClick(nil)
+    }
+
+    func showFailNotify() {
+        let failNotification = NSUserNotification()
+        failNotification.title = "上传失败"
+        failNotification.informativeText = "请检查设置是否正确"
+        NSUserNotificationCenter.default.deliver(failNotification)
     }
 
     func createCompressImageData(filePath: String) -> Data {
