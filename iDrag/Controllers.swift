@@ -18,7 +18,7 @@ class DragUploadManager {
     let shareWorkspace = NSWorkspace.shared()
     let fileManager = FileManager()
 
-    let domain = NSUserDefaultsController.shared().defaults.string(forKey: "domain")!
+
     let qiNiu = QNUploadManager()!
 
     var dragApp: NSStatusItem!
@@ -157,7 +157,8 @@ class DragUploadManager {
     }
 
     func createUploadFileRow(filename: String, filePath: String, fileType: String) -> UploadFileRow {
-        let imageUrl = "\(self.domain)/\(filename)"
+        let domain: String = NSUserDefaultsController.shared().defaults.string(forKey: "domain")!
+        let imageUrl = "\(domain)/\(filename)"
         let fileIcon = { () -> NSImage in
             if ImageFileTypes.contains(fileType) {
                 return NSImage(contentsOfFile: filePath)!
@@ -172,7 +173,8 @@ class DragUploadManager {
     }
 
     func createUploadDataRow(filename: String, imageData: Data) -> UploadFileRow {
-        let imageUrl = "\(self.domain)/\(filename)"
+        let domain: String = NSUserDefaultsController.shared().defaults.string(forKey: "domain")!
+        let imageUrl = "\(domain)/\(filename)"
         let fileIcon = NSImage(data: imageData)!
         let uploadFileRow = UploadFileRow(image: fileIcon, url: imageUrl, filename: filename)
         return uploadFileRow

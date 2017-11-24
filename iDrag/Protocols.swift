@@ -22,15 +22,15 @@ extension CheckSettings {
         })
 
         let statusMenuItem = dragMenu.item(at: 0)!
-        let shortcutItem = dragMenu.item(at: 5)!
+        let clipboardUploadItem = dragMenu.item(at: 3)!
         
         if unSetItem.count == 0 {
             statusMenuItem.isHidden = true
-            shortcutItem.isHidden = false
+            clipboardUploadItem.isHidden = false
         }
         else {
             statusMenuItem.isHidden = false
-            shortcutItem.isHidden = true
+            clipboardUploadItem.isHidden = true
         }
     }
 }
